@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@Config/*": ["./src/Config/*"],
+      "@Database/*": ["./src/Database/*"],
+      "@Models/*": ["./src/Models/*"],
+      "@Modules/*": ["./src/Modules/*"],
+      "@Scenes/*": ["./src/Scenes/*"],
+      "@SystemEntities/*": ["./src/SystemEntities/*"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

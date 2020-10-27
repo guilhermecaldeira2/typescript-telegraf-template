@@ -1,0 +1,10 @@
+{
+  "TELEGRAM_TOKEN": "",
+  "postgres": {
+    "HOST": "",
+    "DATABASE": "",
+    "USER": "",
+    "PASSWORD": "",
+    "PORT": null
+  }
+}
