@@ -28,6 +28,7 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/node": "^14.14.5",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.3.0",
     "babel-plugin-module-resolver": "^4.0.0",
@@ -43,6 +44,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
+    "donato": "^1.0.0",
     "escape-string-regexp": "^4.0.0",
     "esm": "^3.2.25",
     "pg": "^8.3.2",

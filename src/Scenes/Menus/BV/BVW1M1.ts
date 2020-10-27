@@ -1,20 +1,20 @@
-import { TelegrafMenu } from '@Modules/Menu';
-import telegrafScene from '@Modules/Stage';
+import { TelegrafMenu } from 'donato';
 
 class BVW1M1 extends TelegrafMenu {
-  firstHandler = (ctx: any) => {
-    ctx.reply('Olá, digite seu username');
+  firstHandler = async (ctx: any) => {
+    await ctx.reply('Olá Digite seu nome: ');
     ctx.wizard.next();
   };
 
   subscribeComposer = () => {
-    this.composer.hears(/([a-zA-Z])+/gi, (ctx: any) => {
-      ctx.reply(`E ai AGAIN ${ctx.match[0]}`);
+    this.composer.hears(/(\w+)/gi, async (ctx: any) => {
+      await ctx.reply(`Olá ${ctx.match[0]}`);
+      ctx.scene.enter('BVW1M2');
     });
-    this.composer.use((ctx: any) => {
-      ctx.reply('fala logo mermão');
+    this.composer.use((ctx) => {
+      ctx.reply('Digite seu nome');
     });
   };
 }
 
-export default telegrafScene.subscribeScene(new BVW1M1('BVW1M1').init());
+export default new BVW1M1('BVW1M1').init();

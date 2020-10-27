@@ -1,12 +1,14 @@
-import { Telegraf, session } from 'telegraf';
+import { Telegraf, session, Stage } from 'telegraf';
 import { TelegrafContext } from 'telegraf/typings/context';
-import Connection from './Connection';
+
 import * as env from '@Config/config.json';
-import telegrafStage from '@Modules/Stage';
+import scenes from '@Scenes/index';
+import Connection from './Connection';
 // import { exit } from '@Scenes/Middlewares/Generic';
 
 class App {
   private bot: Telegraf<TelegrafContext>;
+
   private connection: Connection;
 
   constructor() {
@@ -20,7 +22,7 @@ class App {
 
   handleBot = (): Promise<void> => {
     this.bot.use(session());
-    this.bot.use(telegrafStage.subscribeStage().middleware());
+    this.bot.use(scenes.subscribeStage().middleware());
 
     // this.bot.hears('Sair', exit);
 
@@ -42,7 +44,8 @@ class App {
       // await this.databaseConnection();
       await this.handleBot();
     } catch (err) {
-      console.error(err);
+      // eslint-disable-next-line no-console
+      console.log(err);
     }
   };
 }
